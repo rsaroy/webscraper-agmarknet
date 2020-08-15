@@ -197,14 +197,14 @@ def fill_crop(crop):
 # Opening a wordfile in working directory containing list of crops
 wordfile = open(r'crops.txt', "r")
 csv_object = csv.reader(wordfile)
-wordlist_kacchi = list(csv_object)
+wordlist_int = list(csv_object)
 wordlist = []
-for entry in wordlist_kacchi:
-    entry_ = str(entry)
-    word1 = entry_.lstrip("['")
+for entry in wordlist_int:
+    entry_string = str(entry)
+    word1 = entry_string.lstrip("['")
     word2 = word1.rstrip("']")
     wordlist.append(word2)
-# Now we have processed it into an iterable list of crops - wordlist_kacchi
+# Now we have processed it into an iterable list of crops - wordlist_int
 
 # initialising geckodriver
 caps = DesiredCapabilities().FIREFOX
